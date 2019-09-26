@@ -1,7 +1,7 @@
-SOURCE = Boot.o KernelProxy.o Kernel/Main.o Kernel/VTableGuard.o
+SOURCE = boot.o kernel.o
 CC = gcc
-CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c -fno-rtti -fno-exceptions -o0
-LDFLAGS = -T Link.ld -melf_i386
+CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
+LDFLAGS = -T link.ld -melf_i386
 AS = nasm
 ASFLAGS = -f elf
 
@@ -34,7 +34,7 @@ os.iso: kernel.elf
 run: os.iso
 	bochs -f bochsrc.txt -q
 
-%.o: %.cpp Kernel/%.cpp
+%.o: %.c
 	$(CC) $(CFLAGS)  $< -o $@
 
 %.o: KernelMain.s

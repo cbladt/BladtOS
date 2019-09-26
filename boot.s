@@ -1,6 +1,5 @@
-global Boot
-extern KernelInitProxy
-extern KernelMainProxy
+global boot
+extern kmain
 
 MAGIC_NUMBER 	equ 0x1BADB002
 FLAGS		equ 0x0
@@ -20,8 +19,7 @@ align 4
 	dd CHECKSUM
 
 
-Boot:
+boot:
 	mov esp, kernel_stack + KERNEL_STACK_SIZE
-	call KernelInitProxy
-	call KernelMainProxy
+	call kmain
 	mov edx, 0xDEADBEEF
