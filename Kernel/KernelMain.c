@@ -1,0 +1,7 @@
+void KernelInit()
+{
+}
+
+void KernelMain()
+{
+}

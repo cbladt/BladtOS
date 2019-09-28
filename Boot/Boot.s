@@ -1,5 +1,6 @@
 global boot
-extern kmain
+extern KernelInit
+extern KernelMain
 
 MAGIC_NUMBER 	equ 0x1BADB002
 FLAGS		equ 0x0
@@ -21,5 +22,9 @@ align 4
 
 boot:
 	mov esp, kernel_stack + KERNEL_STACK_SIZE
-	call kmain
+	call KernelInit
+	call KernelMain
 	mov edx, 0xDEADBEEF
+
+.loop:
+    jmp .loop
