@@ -1,7 +1,0 @@
-void KernelInit()
-{
-}
-
-void KernelMain()
-{
-}

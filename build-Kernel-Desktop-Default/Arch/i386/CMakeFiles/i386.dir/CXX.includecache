@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cab/Projects/BladtOS/Kernel/Arch/i386/Framebuffer.cpp
+Framebuffer.hpp
+/home/cab/Projects/BladtOS/Kernel/Arch/i386/Framebuffer.hpp
+
+/home/cab/Projects/BladtOS/Kernel/Arch/i386/Framebuffer.hpp
+

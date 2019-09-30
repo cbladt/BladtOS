@@ -1,0 +1,1 @@
+/usr/bin/ld -T /home/cab/Projects/BladtOS/Kernel/Boot/Link.ld -melf_i386  CMakeFiles/Kernel.elf.dir/Boot/Boot.asm.o CMakeFiles/Kernel.elf.dir/main.cpp.o -o Kernel.elf Arch/i386/libarch.a 

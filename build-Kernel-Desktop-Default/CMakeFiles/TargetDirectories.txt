@@ -1,0 +1,8 @@
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/CMakeFiles/Kernel.elf.dir
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/CMakeFiles/edit_cache.dir
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/CMakeFiles/rebuild_cache.dir
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/CMakeFiles/edit_cache.dir
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/CMakeFiles/rebuild_cache.dir
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/CMakeFiles/arch.dir
+/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/CMakeFiles/edit_cache.dir

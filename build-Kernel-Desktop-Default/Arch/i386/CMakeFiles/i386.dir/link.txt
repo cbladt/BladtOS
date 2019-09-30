@@ -1,0 +1,2 @@
+/usr/bin/ar qc libi386.a  CMakeFiles/i386.dir/Framebuffer.cpp.o
+/usr/bin/ranlib libi386.a

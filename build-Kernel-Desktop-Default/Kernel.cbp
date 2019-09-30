@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Kernel"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Arch\;CMake Files\Arch\i386\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Kernel.elf">
+				<Option output="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Kernel.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cab/Projects/BladtOS/Kernel/Arch/i386/."/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 Kernel.elf"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Kernel.elf/fast">
+				<Option output="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Kernel.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cab/Projects/BladtOS/Kernel/Arch/i386/."/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 Kernel.elf/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="arch">
+				<Option output="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/libarch.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cab/Projects/BladtOS/Kernel/Arch/i386/."/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 arch"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="arch/fast">
+				<Option output="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/libarch.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cab/Projects/BladtOS/Kernel/Arch/i386/."/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 arch/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cab/Projects/BladtOS/build-Kernel-Desktop-Default/Arch/i386/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/Arch/i386/Framebuffer.cpp">
+			<Option target="arch"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/Arch/i386/Framebuffer.hpp">
+			<Option target="arch"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/Arch/i386/io.asm">
+			<Option target="arch"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/Arch/i386/io.h">
+			<Option target="arch"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/Boot/Boot.asm">
+			<Option target="Kernel.elf"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/main.cpp">
+			<Option target="Kernel.elf"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/Arch/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Arch\"/>
+		</Unit>
+		<Unit filename="/home/cab/Projects/BladtOS/Kernel/Arch/i386/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Arch\i386\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
