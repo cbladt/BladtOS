@@ -1,11 +1,14 @@
 SET (arch_SRC
     Framebuffer.cpp
     io.asm
+    Serialport.cpp
 )
 
 SET (arch_HDR
+    Types.hpp
     Framebuffer.hpp
     io.h
+    Serialport.hpp
 )
 
 add_library(arch STATIC ${arch_SRC} ${arch_HDR})

@@ -1,25 +1,25 @@
 #include "Framebuffer.hpp"
-#include "io.h"
 
-/* The I/O ports */
-#define FB_COMMAND_PORT         0x3D4
-#define FB_DATA_PORT            0x3D5
+#include <io.h>
+#include <Types.hpp>
 
-/* The I/O port commands */
-#define FB_HIGH_BYTE_COMMAND    14
-#define FB_LOW_BYTE_COMMAND     15
+constexpr auto FramebufferCommandPort = 0x3D4;
+constexpr auto FramebufferDataPort = 0x3D5;
+
+constexpr auto FramebufferHighByteCommand = 14;
+constexpr auto FramebufferLowByteCommand = 15;
 
 namespace
 {
-    constexpr int TERMROWS = 22;
-    constexpr int TERMCOLS = 160;
-    char* _address;
-    unsigned short _index;
-    unsigned short _count;
+    constexpr auto TERMROWS = 22;
+    constexpr auto TERMCOLS = 160;
+    int8_t* _address;
+    uint16_t _index;
+    uint16_t _count;
 
     void Scroll()
     {
-        for (int n = 0; n < TERMCOLS * TERMROWS; n++)
+        for (size_t n = 0; n < TERMCOLS * TERMROWS; n++)
         {
             _address[n] = _address[n + TERMCOLS];
         }
@@ -34,7 +34,7 @@ namespace
             Scroll();
         }
 
-        for (int n = 0; n <= TERMROWS; n++)
+        for (size_t n = 0; n <= TERMROWS; n++)
         {
             if (_index <= TERMCOLS * n)
             {
@@ -50,11 +50,11 @@ namespace
 
     void MoveCursor()
     {
-        unsigned short pos = _count - 1;
-        OutByte(FB_COMMAND_PORT, FB_HIGH_BYTE_COMMAND);
-        OutByte(FB_DATA_PORT,    ((pos >> 8) & 0x00FF));
-        OutByte(FB_COMMAND_PORT, FB_LOW_BYTE_COMMAND);
-        OutByte(FB_DATA_PORT,    pos & 0x00FF);
+        uint16_t pos = _count - 1;
+        OutByte(FramebufferCommandPort, FramebufferHighByteCommand);
+        OutByte(FramebufferDataPort,    ((pos >> 8) & 0x00FF));
+        OutByte(FramebufferCommandPort, FramebufferLowByteCommand);
+        OutByte(FramebufferDataPort,    pos & 0x00FF);
     }
 }
 
@@ -66,7 +66,7 @@ namespace Framebuffer
         _index = 0;
         _count = 0;
 
-        for (int n = 0; n < TERMCOLS * TERMROWS; n++)
+        for (size_t n = 0; n < TERMCOLS * TERMROWS; n++)
         {
             _address[n] = 0x0;
         }
