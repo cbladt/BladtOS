@@ -21,6 +21,8 @@ align 4
 
 
 Boot:
+	mov eax, 0x0
+	mov [0x0], eax
 	mov esp, kernel_stack + KERNEL_STACK_SIZE
 	call KernelInit
 	call KernelMain

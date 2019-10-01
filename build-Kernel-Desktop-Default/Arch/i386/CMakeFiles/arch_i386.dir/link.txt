@@ -1,2 +1,0 @@
-/usr/bin/ar cr libarch_i386.a  CMakeFiles/arch_i386.dir/Boot/Boot.asm.o 
-/usr/bin/ranlib libarch_i386.a 

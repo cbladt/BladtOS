@@ -14,7 +14,7 @@ set(CMAKE_ASM_NASM_COMPILE_OBJECT "<CMAKE_ASM_NASM_COMPILER> <INCLUDES> \
 # Setup compiler flags
 set(FLAGS "-m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror")
 set(CMAKE_C_FLAGS "${FLAGS}")
-set(CMAKE_CXX_FLAGS "${FLAGS}")
+set(CMAKE_CXX_FLAGS "${FLAGS} -o2")
 
 # Custom link routine..
 set(CMAKE_C_LINK_EXECUTABLE "<CMAKE_LINKER> -T ${CMAKE_SOURCE_DIR}/Boot/Link.ld -melf_i386 <CMAKE_C_LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>")

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libarch.a  CMakeFiles/arch.dir/Framebuffer.cpp.o CMakeFiles/arch.dir/io.asm.o
-/usr/bin/ranlib libarch.a

@@ -1,0 +1,5 @@
+**.user
+build-*
+Build/bochslog.txt
+Build/os.iso
+Build/iso

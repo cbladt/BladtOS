@@ -1,20 +1,16 @@
-#include "Arch/i386/Framebuffer.hpp"
+#include <Framebuffer.hpp>
 
 extern "C"
 {
     void KernelInit()
     {
-
+        Framebuffer::Init();
+        Framebuffer::Print("KernelInit..");
     }
 
     void KernelMain()
-    {
-        Framebuffer fb;
-        fb.Print("Never gonna give you up\n");
-        fb.Print("Never gonna give you up\n");
-        fb.Print("Never gonna give you up\n");
-        fb.Print("Never gonna give you up\n");
-        fb.Print("Never gonna give you up\n");
+    {        
+        Framebuffer::Print("KernelMain..");
     }
 }
 
