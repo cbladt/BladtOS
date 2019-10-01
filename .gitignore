@@ -1,4 +1,6 @@
 **.user
+**.autosave
+**.save
 build-*
 Build/bochslog.txt
 Build/os.iso
