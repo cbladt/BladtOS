@@ -1,5 +1,5 @@
 #pragma once
-#include <Types.hpp>
+#include <stdint.h>
 
 class Serialport
 {
@@ -13,7 +13,7 @@ public:
     Serialport(Serialport&&) = delete;
     Serialport& operator=(Serialport&&) = delete;
 
-    void Write(const char* str);
+    void Write(const uint8_t* str);
 
 private:
     uint16_t _comPort;

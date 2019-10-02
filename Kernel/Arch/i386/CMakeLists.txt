@@ -1,5 +1,5 @@
 SET (arch_SRC
-    Framebuffer.cpp
+    Terminal.cpp
     io.asm
     Serialport.cpp
     Boot/Boot.asm
@@ -7,7 +7,7 @@ SET (arch_SRC
 
 SET (arch_HDR
     Types.hpp
-    Framebuffer.hpp
+    Terminal.hpp
     io.h
     Serialport.hpp
 )

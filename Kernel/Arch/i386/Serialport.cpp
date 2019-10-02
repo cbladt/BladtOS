@@ -6,20 +6,38 @@
  * order, but they start at different values.
  */
 
-#define SERIAL_DATA_PORT(base)          (base)
-#define SERIAL_FIFO_COMMAND_PORT(base)  (base + 2)
-#define SERIAL_LINE_COMMAND_PORT(base)  (base + 3)
-#define SERIAL_MODEM_COMMAND_PORT(base) (base + 4)
-#define SERIAL_LINE_STATUS_PORT(base)   (base + 5)
+namespace
+{
+    constexpr uint16_t SerialDataPort(uint16_t base)
+    {
+        return base;
+    }
 
-/* The I/O port commands */
+    constexpr uint16_t SerialFifoCommandPort(uint16_t base)
+    {
+        return static_cast<uint16_t>(base + 2);
+    }
 
-/* SERIAL_LINE_ENABLE_DLAB:
- * Tells the serial port to expect first the highest 8 bits on the data port,
- * then the lowest 8 bits will follow
- */
-constexpr auto SerialLineEnableDLAB = 0x80;
+    constexpr uint16_t SerialLineCommandPort(uint16_t base)
+    {
+        return static_cast<uint16_t>(base + 2);
+    }
 
+    constexpr uint16_t SerialModemCommandPort(uint16_t base)
+    {
+        return static_cast<uint16_t>(base + 2);
+    }
+
+    constexpr uint16_t SerialLineStatusPort(uint16_t base)
+    {
+        return static_cast<uint16_t>(base + 2);
+    }
+}
+
+// Tell port to expect 16bit data - 8 higher bits first.
+constexpr uint8_t SerialLineEnableDLAB = 0x80;
+
+// Baud divisor.
 constexpr uint16_t SerialLineDivisor = 1;
 
 /* Bit:     | 7 | 6 | 5 4 3 | 2 | 1 0 |
@@ -43,23 +61,23 @@ constexpr uint8_t SerialLineModemConfig = 0x03;
 Serialport::Serialport(uint16_t comPort) :
     _comPort(comPort)
 {
-    OutByte(SERIAL_LINE_COMMAND_PORT(_comPort), SerialLineEnableDLAB);
-    OutByte(SERIAL_DATA_PORT(_comPort), (SerialLineDivisor >> 8) & 0x00FF);
-    OutByte(SERIAL_DATA_PORT(_comPort), SerialLineDivisor & 0x00FF);
+    OutByte(SerialLineCommandPort(_comPort), SerialLineEnableDLAB);
+    OutByte(SerialDataPort(_comPort), (SerialLineDivisor >> 8) & 0x00FF);
+    OutByte(SerialDataPort(_comPort), SerialLineDivisor & 0x00FF);
 
-    OutByte(SERIAL_LINE_COMMAND_PORT(_comPort), SerialLineDefaultConfig);
+    OutByte(SerialLineCommandPort(_comPort), SerialLineDefaultConfig);
 
-    OutByte(SERIAL_FIFO_COMMAND_PORT(_comPort), SerialLineFifoConfig);
+    OutByte(SerialFifoCommandPort(_comPort), SerialLineFifoConfig);
 
-    OutByte(SERIAL_MODEM_COMMAND_PORT(_comPort), SerialLineModemConfig);
+    OutByte(SerialModemCommandPort(_comPort), SerialLineModemConfig);
 }
 
 bool Serialport::ReadyForTransmit()
 {
-    return InByte(SERIAL_LINE_STATUS_PORT(_comPort)) & 0x20;
+    return InByte(SerialLineStatusPort(_comPort)) & 0x20;
 }
 
-void Serialport::Write(const char *str)
+void Serialport::Write(const uint8_t *str)
 {
     for(auto n = 0;; n++)
     {
@@ -73,6 +91,6 @@ void Serialport::Write(const char *str)
         while(!ReadyForTransmit())
         {}
 
-        OutByte(SERIAL_DATA_PORT(_comPort), c);
+        OutByte(SerialDataPort(_comPort), c);
     }
 }

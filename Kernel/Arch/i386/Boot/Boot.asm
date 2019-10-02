@@ -1,4 +1,6 @@
-global Boot
+global _start
+extern _init
+extern _fini
 extern KernelInit
 extern KernelMain
 
@@ -20,10 +22,12 @@ align 4
 	dd CHECKSUM
 
 
-Boot:
+_start:
 	mov esp, kernel_stack + KERNEL_STACK_SIZE
-	call KernelInit	
-	call KernelMain	
+	call KernelInit		
+	call _init
+	call KernelMain
+	call _fini
 
 .loop:
     jmp .loop

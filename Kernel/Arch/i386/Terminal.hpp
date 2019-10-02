@@ -1,7 +1,6 @@
 #pragma once
 
-namespace Framebuffer
-{
-    void Init();
+namespace Terminal
+{        
     void Print(const char* str);
 }
