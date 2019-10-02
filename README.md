@@ -7,7 +7,7 @@
 ## Open "Kernel/CMakeLists.txt" as project.
 
 ## Left menu -> Projects -> Build & Run -> Run - Configure as following
-[Kit Config](/Docs/QTCreatorRunConfig.png)
+![Run Config](/Docs/QTCreatorRunConfig.png)
 
 
 ... Profit!
