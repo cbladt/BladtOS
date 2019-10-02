@@ -2,6 +2,7 @@ SET (arch_SRC
     Framebuffer.cpp
     io.asm
     Serialport.cpp
+    Boot/Boot.asm
 )
 
 SET (arch_HDR

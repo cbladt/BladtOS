@@ -11,8 +11,8 @@ constexpr auto FramebufferLowByteCommand = 15;
 
 namespace
 {
-    constexpr auto TERMROWS = 22;
-    constexpr auto TERMCOLS = 160;
+    constexpr uint16_t TERMROWS = 22;
+    constexpr uint16_t TERMCOLS = 160;
     int8_t* _address;
     uint16_t _index;
     uint16_t _count;
@@ -50,7 +50,7 @@ namespace
 
     void MoveCursor()
     {
-        uint16_t pos = _count - 1;
+        uint16_t pos = static_cast<uint16_t>(_count - 1);
         OutByte(FramebufferCommandPort, FramebufferHighByteCommand);
         OutByte(FramebufferDataPort,    ((pos >> 8) & 0x00FF));
         OutByte(FramebufferCommandPort, FramebufferLowByteCommand);
