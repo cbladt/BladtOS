@@ -6,7 +6,6 @@ SET (arch_SRC
 )
 
 SET (arch_HDR
-    Types.hpp
     Terminal.hpp
     io.h
     Serialport.hpp
