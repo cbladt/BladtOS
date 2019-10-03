@@ -1,10 +1,17 @@
 #pragma once
-#include <stdint.h>
+#include <Types.hpp>
+#include <io.h>
 
+#include "Serialport.inc"
+
+///
+/// SerialPort serves as a proxy to __internal::Serialportimpl, to provide an easier overview of the interface.
+/// Note: Configuration should be parameterized.
+template <const uint16_t ComPort, const uint16_t Divisor>
 class Serialport
 {
 public:
-    Serialport(uint16_t comPort);
+    Serialport() = default;
     ~Serialport() = default;
 
     Serialport(const Serialport&) = delete;
@@ -13,10 +20,12 @@ public:
     Serialport(Serialport&&) = delete;
     Serialport& operator=(Serialport&&) = delete;
 
-    void Write(const uint8_t* str);
+    void Write(const uint8_t* str)
+    {
+        _impl.Write(str);
+    }
 
 private:
-    uint16_t _comPort;
-
-    bool ReadyForTransmit();
+    __internal::SerialportImpl<ComPort, Divisor> _impl;
 };
+

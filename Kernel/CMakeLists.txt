@@ -8,7 +8,10 @@ set(CMAKE_C_STANDARD 11)
 # Setup Arch.
 add_subdirectory("${_SUBDIR}")
 
+# Setuo Libs.
+add_subdirectory("Utility")
+
 set(SRC ${SRC} "main.cpp")
 
 add_executable(${PROJECT_NAME}.elf ${SRC})
-target_link_libraries(${PROJECT_NAME}.elf arch)
+target_link_libraries(${PROJECT_NAME}.elf ArchLib)
