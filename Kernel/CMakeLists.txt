@@ -10,8 +10,9 @@ add_subdirectory("${_SUBDIR}")
 
 # Setuo Libs.
 add_subdirectory("Utility")
+add_subdirectory("etl")
 
 set(SRC ${SRC} "main.cpp")
 
 add_executable(${PROJECT_NAME}.elf ${SRC})
-target_link_libraries(${PROJECT_NAME}.elf ArchLib)
+target_link_libraries(${PROJECT_NAME}.elf ArchLib etl)

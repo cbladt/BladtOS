@@ -1,6 +1,7 @@
 **.user
 **.autosave
 **.save
+**.swp
 build-*
 Build/bochslog.txt
 Build/os.iso

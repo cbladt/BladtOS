@@ -3,6 +3,10 @@ set(CMAKE_SYSTEM_PROCESSOR x86)
 set(CMAKE_C_COMPILER_WORKS 1)
 set(CMAKE_CXX_COMPILER_WORKS 1)
 
+# Etl Stuff.
+set(ETL_PROFILE DEFAULT)
+set(_DEFINES "${_DEFINES} -DETL_NO_STL")
+
 set(_SUBDIR "Arch/i386")
 
 # Toolchain stuff.
@@ -21,7 +25,7 @@ set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> qcs <TARGET> <LINK_FLAGS> <OBJECTS>")
 set(CMAKE_ASM_NASM_COMPILE_OBJECT "<CMAKE_ASM_NASM_COMPILER> <INCLUDES> <FLAGS> -f elf32 -o <OBJECT> <SOURCE>")
 
 # Compiler flags.
-set(_FLAGS "-ffreestanding -Wall -Wextra -c -Werror")
+set(_FLAGS "-ffreestanding -nostdlib -Wall -Wextra -c -Werror ${_DEFINES}")
 set(_CFLAGS "${_FLAGS} -Wno-strict-aliasing -pedantic")
 set(_CXXFLAGS "${_FLAGS} -O2 -flto -fno-exceptions -fno-rtti -Wpedantic -Wnon-virtual-dtor -Wold-style-cast -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wduplicated-cond -Wlogical-op -Wuseless-cast")
 set(CMAKE_C_FLAGS "${_CFLAGS}" CACHE INTERNAL "C compiler options" FORCE)
