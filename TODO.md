@@ -33,5 +33,8 @@ Kernel/Utility/Types.cpp:// TODO FISK
 Kernel/Utility/Types.cpp:// TODO FISK
 Kernel/Utility/Types.cpp:// TODO FISK
 Kernel/Utility/Types.cpp:// TODO FISK1234
+Kernel/Utility/Types.cpp:// TODO FISK1234
+Kernel/Utility/Types.cpp:// TODO FISK1234
+Kernel/Utility/Types.cpp:// TODO FISK1234
 </pre>
-33 Todo's
+36 Todo's
