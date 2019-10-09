@@ -17,5 +17,6 @@ Kernel/Arch/i386/Serialport_internal.hpp:		// TODO Transmit more than 1 byte at 
 Kernel/CMakeLists.txt:# // TODO Probaly add KernelSrc in CMake subdir or someting.
 Kernel/Utility/Vga.hpp:// TODO Research whether this is really cross platform or only specific to some platforms.
 Kernel/Utility/Types.cpp:// TODO Remove this file as soon as the UtilityLib contains another translation unit so that CMake recognises it as a lib.
+Kernel/Utility/Types.cpp:// TODO THIS IS A TEST
 </pre>
-17 Todo's
+18 Todo's
