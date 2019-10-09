@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "Pre Commit hook is running.."
+echo "pre-push is running!"
 
 FILE=TODO.md
 SOURCE=Kernel
@@ -14,3 +14,4 @@ echo "$LINES Todo's" >> $FILE
 
 git add $FILE
 git commit -m"Updated $FILE" --no-verify
+git push --no-verify
