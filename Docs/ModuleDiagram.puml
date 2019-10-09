@@ -4,8 +4,15 @@ object KernelElf
 KernelElf : The kernel itself which glues everything together.
 
 object BLibC
+BLibC : libc stub
+
 object ArchLib
+ArchLib : Architecture specific stuff
+
 object Utility
+Utility : Utilities to use across modules
+
 object ETL
+ETL : Embedded Template Libarary
 
 @enduml
