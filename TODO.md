@@ -1,4 +1,5 @@
 # Todo's (As parsed by QT Creator)
+<pre>
 Kernel/Arch/i386/CMakeLists.txt:# // TODO Somehow hide the internals of this lib (Files not in Public dir) from rest of project.
 Kernel/Arch/i386/CMakeLists.txt:# // TODO Investigate how to specficy explicit interfaces for each Arch to implement. As of right now they are totally implicit. (Virtuals are slow and do not allow common constructors. CRTP perhaps?)
 Kernel/Arch/i386/Public/Terminal.cpp:        /// \note: // TODO The idea of the T parameter was to be able to access sizeof(T) chunk at a time.
@@ -16,3 +17,5 @@ Kernel/Arch/i386/Serialport_internal.hpp:		// TODO Transmit more than 1 byte at 
 Kernel/CMakeLists.txt:# // TODO Probaly add KernelSrc in CMake subdir or someting.
 Kernel/Utility/Vga.hpp:// TODO Research whether this is really cross platform or only specific to some platforms.
 Kernel/Utility/Types.cpp:// TODO Remove this file as soon as the UtilityLib contains another translation unit so that CMake recognises it as a lib.
+</pre>
+17 Todo's
