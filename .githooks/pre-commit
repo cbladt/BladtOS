@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Pre Commit hook is running.."
+
 FILE=TODO.md
 SOURCE=Kernel
 EXCLUDE="etl/test"
