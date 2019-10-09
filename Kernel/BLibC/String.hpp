@@ -1,6 +1,7 @@
 #pragma once
 
-#include <Types.hpp>
+#include <stdint.h>
+#include <stddef.h>
 
 namespace BLibC
 {
