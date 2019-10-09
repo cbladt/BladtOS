@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "pre-push is running!"
+echo "post-commit is running!"
 
 FILE=TODO.md
 SOURCE=Kernel
@@ -15,6 +15,6 @@ echo "$LINES Todo's" >> $FILE
 git add $FILE
 git commit -m"Updated $FILE" --no-verify
 
-echo "pre-push is done!"
+echo "post-commmit is done!"
 
 exit 0
