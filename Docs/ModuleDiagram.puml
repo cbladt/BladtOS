@@ -15,4 +15,6 @@ Utility : Utilities to use across modules
 object ETL
 ETL : Embedded Template Libarary
 
+KernelElf <|-- ETL
+
 @enduml
