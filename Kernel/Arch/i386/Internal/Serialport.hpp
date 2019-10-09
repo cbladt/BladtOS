@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Types.hpp>
-#include <../Io.h>
+#include <../Internal/Io.h>
 
 ///
 /// \brief __internal contains constexpr stuff, because the class cannot contain constexpr stuff.

@@ -1,22 +1,18 @@
-#include <Terminal.hpp>
-#include <Serialport.hpp>
-#include <../Framebuffer.hpp>
-#include <stddef.h>
+#include <Log.hpp>
+
 
 extern "C"
 {
     void KernelInit()
     {
+        // Init heap and stuff.
     }
 
     void KernelMain()
-    {        
-        Serialport<0x3F8, 1> sp;
-
-        const char* str = "Kage";
-        sp.Write(reinterpret_cast<const uint8_t*>(str));
-
-        Terminal::Print("Done");
+    {
+        Log::Debug() << "Debug: " << "Hrello World" << " " << 1337 << Log::NewLine;
+        Log::Error() << "Error: " << "Hrello World" << " " << 1337 << Log::NewLine;
+        Log::Debug() << "This is" << Log::NewLine << "newline";
     }
 }
 

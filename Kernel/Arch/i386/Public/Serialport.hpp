@@ -1,5 +1,5 @@
 #pragma once
-#include <../Serialport_internal.hpp>
+#include <../Internal/Serialport.hpp>
 
 ///
 /// \brief SerialPort serves as a proxy to __internal::Serialportimpl, to provide an easier overview of the interface.

@@ -26,8 +26,7 @@ _start:
 	mov esp, kernel_stack + KERNEL_STACK_SIZE
 	call KernelInit		
 	call _init
-	call KernelMain
+	call KernelMain	
 	call _fini
-
 .loop:
-    jmp .loop
+	jmp .loop

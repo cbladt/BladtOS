@@ -1,8 +1,8 @@
 #include "Terminal.hpp"
-#include <../Io.h>
+#include <../Internal/Io.h>
+#include <../Internal/Framebuffer.hpp>
 #include <Types.hpp>
 #include <Vga.hpp>
-#include <../Framebuffer.hpp>
 
 namespace
 {
@@ -56,12 +56,12 @@ namespace
         }
 
         ///
-        /// \note index, // TODO Consider a private field with get/set properties as usual best practice.
+        /// \note index, Consider a private field with get/set properties as usual best practice.
         ///
         size_t index;
 
         ///
-        /// \note index, // TODO Consider a private field with get/set properties as usual best practice.
+        /// \note index, Consider a private field with get/set properties as usual best practice.
         ///
         size_t count;
     };
@@ -107,27 +107,28 @@ namespace
     /// \brief MoveCursor, Move Cursor to the last displayed character on screen.
     /// \note Perhaps make an asm function to move cursor to desired location instead 4 calls to OutByte?
     ///
-    void MoveCursor()
+    /*void MoveCursor()
     {
         uint16_t pos = static_cast<uint16_t>(_data.count - 1);
         OutByte(Framebuffer::CommandPort, Framebuffer::HighByteCommand);
         OutByte(Framebuffer::DataPort,    static_cast<uint8_t>((pos >> 8) & 0x00FF));
         OutByte(Framebuffer::CommandPort, Framebuffer::LowByteCommand);
         OutByte(Framebuffer::DataPort,    static_cast<uint8_t>(pos & 0x00FF));
-    }
+    }*/
 }
 
 namespace Terminal
 {
-    void Print(const char* str)
-    {
-        for(auto n = 0;; n++)
+    void Print(const etl::string_view& string)
+    {                        
+        for (auto n = string.begin(); n != string.end(); n++)
         {
-            auto& c = str[n];
+            auto& c = n[0];
 
-            if (c == '\0')
+            if (c == '\n')
             {
-                break;
+                GoToNextLine();
+                continue;
             }
 
             _data.WriteAtIndex(_data.index, c);
@@ -137,10 +138,8 @@ namespace Terminal
             _data.index += 2;
         }
 
-        // TODO Perhaps we should ignore cursor as long as we do not accept input.
-        MoveCursor();
-
-        GoToNextLine();
+        // TODO We should ignore cursor as long as we do not accept input.
+        //MoveCursor();
 
         _data.count = (_data.index / 2);
     }
