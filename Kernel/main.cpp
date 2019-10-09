@@ -1,5 +1,6 @@
 #include <Terminal.hpp>
 #include <Serialport.hpp>
+#include <../Framebuffer.hpp>
 #include <stddef.h>
 
 extern "C"

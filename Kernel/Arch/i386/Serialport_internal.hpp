@@ -1,6 +1,11 @@
 #pragma once
+
+#include <Types.hpp>
+#include <../Io.h>
+
 ///
-/// __internal contains constexpr stuff, because the class cannot contain constexpr stuff.
+/// \brief __internal contains constexpr stuff, because the class cannot contain constexpr stuff.
+/// \note // TODO This stuff should be parameterized.
 ///
 namespace __internal
 {
@@ -81,6 +86,7 @@ namespace __internal
 		    break;
 		}
 
+		// TODO Transmit more than 1 byte at the time.
 		WaitForReadyForTransmit();
 
 		WriteByte(c);
@@ -127,7 +133,10 @@ namespace __internal
 	void WaitForReadyForTransmit() const
 	{
 	    while(!ReadyForTransmit())
-	    {}
+	    {
+		volatile int doNotOptimizeOut = 1;
+		(void)doNotOptimizeOut;
+	    }
 	}
 
 	bool ReadyForTransmit() const

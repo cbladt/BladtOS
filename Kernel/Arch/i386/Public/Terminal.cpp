@@ -1,8 +1,8 @@
 #include "Terminal.hpp"
-#include <io.h>
+#include <../Io.h>
 #include <Types.hpp>
 #include <Vga.hpp>
-#include <Framebuffer.hpp>
+#include <../Framebuffer.hpp>
 
 namespace
 {
@@ -31,6 +31,10 @@ namespace
         DataFields(const DataFields&) = delete;
         DataFields& operator=(const DataFields&) = delete;
 
+        ///
+        /// \note: // TODO The idea of the T parameter was to be able to access sizeof(T) chunk at a time.
+        /// obviously has some index issues to be resolved first - like index = index / sizeof(T) ish
+        ///
         template <typename T>
         void WriteAtIndex(size_t index, T value)
         {
@@ -39,6 +43,10 @@ namespace
             reinterpret_cast<T*>(Framebuffer::Address)[index] = value;
         }
 
+        ///
+        /// \note: // TODO The idea of the T parameter was to be able to access sizeof(T) chunk at a time.
+        /// obviously has some index issues to be resolved first - like index = index / sizeof(T) ish
+        ///
         template <typename T>
         T ReadAtIndex(size_t index)
         {
@@ -47,7 +55,14 @@ namespace
             return reinterpret_cast<T*>(Framebuffer::Address)[index];
         }
 
+        ///
+        /// \note index, // TODO Consider a private field with get/set properties as usual best practice.
+        ///
         size_t index;
+
+        ///
+        /// \note index, // TODO Consider a private field with get/set properties as usual best practice.
+        ///
         size_t count;
     };
 
@@ -65,7 +80,7 @@ namespace
         _data.index -= Terminal::Columns;
     }
 
-    // TODO This is ugly.
+    // TODO This is f*cking ugly.
     void GoToNextLine()
     {
         if (_data.index > Terminal::Columns * (Terminal::Rows - 1))
@@ -88,6 +103,10 @@ namespace
         }
     }
 
+    ///
+    /// \brief MoveCursor, Move Cursor to the last displayed character on screen.
+    /// \note Perhaps make an asm function to move cursor to desired location instead 4 calls to OutByte?
+    ///
     void MoveCursor()
     {
         uint16_t pos = static_cast<uint16_t>(_data.count - 1);
@@ -118,6 +137,7 @@ namespace Terminal
             _data.index += 2;
         }
 
+        // TODO Perhaps we should ignore cursor as long as we do not accept input.
         MoveCursor();
 
         GoToNextLine();

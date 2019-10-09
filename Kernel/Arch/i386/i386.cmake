@@ -5,11 +5,11 @@ set(CMAKE_CXX_COMPILER_WORKS 1)
 
 # Etl Stuff.
 set(ETL_PROFILE DEFAULT)
-set(_DEFINES "${_DEFINES} -DETL_NO_STL")
+set(_DEFINES "${_DEFINES} -DETL_NO_STL -DETL_NO_NULLPTR_SUPPORT")
 
 set(_SUBDIR "Arch/i386")
 
-# Toolchain stuff.
+# Toolchain stuff. (TODO Nasm is still i386 hardcoded.)
 set(TCPRE		    ${TOOLCHAINPREFIX})
 set(_LINKER		    "${TCPRE}-gcc")
 set(CMAKE_C_COMPILER	    "${TCPRE}-gcc" CACHE INTERNAL "C Compiler" FORCE)
@@ -25,7 +25,7 @@ set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> qcs <TARGET> <LINK_FLAGS> <OBJECTS>")
 set(CMAKE_ASM_NASM_COMPILE_OBJECT "<CMAKE_ASM_NASM_COMPILER> <INCLUDES> <FLAGS> -f elf32 -o <OBJECT> <SOURCE>")
 
 # Compiler flags.
-set(_FLAGS "-ffreestanding -nostdlib -Wall -Wextra -c -Werror ${_DEFINES}")
+set(_FLAGS "-ffreestanding -Wall -Wextra -c ${_DEFINES}")
 set(_CFLAGS "${_FLAGS} -Wno-strict-aliasing -pedantic")
 set(_CXXFLAGS "${_FLAGS} -O2 -flto -fno-exceptions -fno-rtti -Wpedantic -Wnon-virtual-dtor -Wold-style-cast -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wduplicated-cond -Wlogical-op -Wuseless-cast")
 set(CMAKE_C_FLAGS "${_CFLAGS}" CACHE INTERNAL "C compiler options" FORCE)
@@ -39,11 +39,12 @@ execute_process(COMMAND bash -c "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_FLAGS} ${_BOO
 execute_process(COMMAND bash -c "${CMAKE_CXX_COMPILER} ${CMAKE_CXX_FLAGS} ${_BOOTDIR}/crtn.s -o ${_BOOTDIR}/crtn.o")
 set(CRT_I "${_BOOTDIR}/crti.o")
 set(CRT_N "${_BOOTDIR}/crtn.o")
-set(_LINKOBJS "${CRT_I} ${CRT_BEGIN} <OBJECTS> <LINK_LIBRARIES> ${CRT_END} ${CRT_N}")
 
-set(_EXELINKCMD "bash -xec \"${_LINKER} -Wl,-T ${CMAKE_SOURCE_DIR}/${_SUBDIR}/Boot/Link.ld -nostdlib ${_LINKOBJS} -o <TARGET> -lgcc\"")
-set(CMAKE_C_LINK_EXECUTABLE ${_EXELINKCMD})
-set(CMAKE_CXX_LINK_EXECUTABLE ${_EXELINKCMD})
+set(_CXXLINKOBJS "${CRT_I} ${CRT_BEGIN} <OBJECTS> <LINK_LIBRARIES> ${CRT_END} ${CRT_N}")
+set(_CLINKOBJS "OBJECTS> <LINK_LIBRARIES>")
+
+set(CMAKE_C_LINK_EXECUTABLE   "bash -xec \"${_LINKER} -Wl,-T ${CMAKE_SOURCE_DIR}/${_SUBDIR}/Boot/Link.ld -flto -nostdlib ${_CLINKOBJS}   -o <TARGET> -lgcc\"")
+set(CMAKE_CXX_LINK_EXECUTABLE "bash -xec \"${_LINKER} -Wl,-T ${CMAKE_SOURCE_DIR}/${_SUBDIR}/Boot/Link.ld -flto -nostdlib ${_CXXLINKOBJS} -o <TARGET> -lgcc\"")
 
 set(_LIBLINKCMD "${CMAKE_AR} rcs <TARGET> <OBJECTS>")
 set(CMAKE_C_CREATE_STATIC_LIBRARY ${_LIBLINKCMD})

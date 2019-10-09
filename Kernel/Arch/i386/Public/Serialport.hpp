@@ -1,12 +1,9 @@
 #pragma once
-#include <Types.hpp>
-#include <io.h>
-
-#include "Serialport.inc"
+#include <../Serialport_internal.hpp>
 
 ///
-/// SerialPort serves as a proxy to __internal::Serialportimpl, to provide an easier overview of the interface.
-/// Note: Configuration should be parameterized.
+/// \brief SerialPort serves as a proxy to __internal::Serialportimpl, to provide an easier overview of the interface.
+/// \note // TODO Configuration should be parameterized.
 template <const uint16_t ComPort, const uint16_t Divisor>
 class Serialport
 {

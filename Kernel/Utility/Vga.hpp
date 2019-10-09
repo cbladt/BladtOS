@@ -1,6 +1,7 @@
 #pragma once
 #include <Types.hpp>
 
+// TODO Research whether this is really cross platform or only specific to some platforms.
 namespace Vga
 {
     enum class Color
