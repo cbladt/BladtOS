@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 2.8)
-execute_process(COMMAND bash -c "git config core.hooksPath ../.githooks")
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 project ("Kernel" LANGUAGES C CXX ASM_NASM)
