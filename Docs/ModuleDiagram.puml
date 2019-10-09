@@ -15,6 +15,9 @@ Utility : Utilities to use across modules
 object ETL
 ETL : Embedded Template Libarary
 
-KernelElf <|-- ETL
+BLibC <|-- ETL
+
+ArchLib <|-- KernelElf
+ETL <|-- KernelElf
 
 @enduml
