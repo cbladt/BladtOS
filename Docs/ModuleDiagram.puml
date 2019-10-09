@@ -20,4 +20,10 @@ BLibC <|-- ETL
 ArchLib <|-- KernelElf
 ETL <|-- KernelElf
 
+ETL <|-- Utility
+
+Utility <|-- ArchLib
+Utility <|-- ETL
+
+
 @enduml
