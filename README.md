@@ -1,4 +1,6 @@
 # Setting up QT Creator
+[Latest QT Creator](http://download.qt.io/official_releases/qtcreator/)
+
 ## Run "Build/prerequisites.sh" on your host machine.
 
 ## Configure kit as following - note "CMake Configuration" at the bottom.
