@@ -1,1 +1,1 @@
-![Module Diagram](http://www.plantuml.com/plantuml/proxy?src=https://pastebin.com/raw/zmmS5ksE
+![Module Diagram](http://www.plantuml.com/plantuml/proxy?src=https://pastebin.com/raw/PqnKCiYX

@@ -25,4 +25,5 @@ $link = $boom[0]."//".$boom[2]."/raw/".$boom[3];
 
 $result = "![Module Diagram](http://www.plantuml.com/plantuml/proxy?src=".$link;
 
+echo "Writing ".$result;
 file_put_contents("README.md", $result);
