@@ -1,0 +1,11 @@
+#!/bin/bash
+FILE=TODO.md
+SOURCE=Kernel
+EXCLUDE="etl/test"
+echo "# Todo's (As parsed by QT Creator)" > $FILE
+echo "<pre>" >> $FILE
+grep -ri "// TODO" $SOURCE | grep -v $EXCLUDE >> $FILE
+echo "</pre>" >> $FILE
+
+LINES=`grep -ri "// TODO" $SOURCE | grep -v $EXCLUDE | wc -l`
+echo "$LINES Todo's" >> $FILE
