@@ -9,3 +9,6 @@ echo "</pre>" >> $FILE
 
 LINES=`grep -ri "// TODO" $SOURCE | grep -v $EXCLUDE | wc -l`
 echo "$LINES Todo's" >> $FILE
+
+git add $FILE
+git commit --amend --no-verify
