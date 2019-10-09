@@ -1,1 +1,0 @@
-![Module Diagram](http://www.plantuml.com/plantuml/proxy?src=https://pastebin.com/raw/jwGxtZQ2)
