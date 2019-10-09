@@ -17,24 +17,5 @@ Kernel/Arch/i386/Serialport_internal.hpp:		// TODO Transmit more than 1 byte at 
 Kernel/CMakeLists.txt:# // TODO Probaly add KernelSrc in CMake subdir or someting.
 Kernel/Utility/Vga.hpp:// TODO Research whether this is really cross platform or only specific to some platforms.
 Kernel/Utility/Types.cpp:// TODO Remove this file as soon as the UtilityLib contains another translation unit so that CMake recognises it as a lib.
-Kernel/Utility/Types.cpp:// TODO THIS IS A TEST
-Kernel/Utility/Types.cpp:// TODO This is a new test
-Kernel/Utility/Types.cpp:// TODO This is a new test
-Kernel/Utility/Types.cpp:// TODO This is a new test
-Kernel/Utility/Types.cpp:// TODO This is a new test// TODO This is a new test
-Kernel/Utility/Types.cpp:// TODO This is a new test123
-Kernel/Utility/Types.cpp:// TODO This is a new test1234
-Kernel/Utility/Types.cpp:// TODO This is a new test
-Kernel/Utility/Types.cpp:// TODO This is a new test124354564
-Kernel/Utility/Types.cpp:// TODO This is a new test
-Kernel/Utility/Types.cpp:// TODO This is a new test
-Kernel/Utility/Types.cpp:// TODO This is a new test234234234
-Kernel/Utility/Types.cpp:// TODO FISK
-Kernel/Utility/Types.cpp:// TODO FISK
-Kernel/Utility/Types.cpp:// TODO FISK
-Kernel/Utility/Types.cpp:// TODO FISK1234
-Kernel/Utility/Types.cpp:// TODO FISK1234
-Kernel/Utility/Types.cpp:// TODO FISK1234
-Kernel/Utility/Types.cpp:// TODO FISK1234asdasdasodiasid
 </pre>
-36 Todo's
+17 Todo's
