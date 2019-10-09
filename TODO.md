@@ -30,5 +30,8 @@ Kernel/Utility/Types.cpp:// TODO This is a new test
 Kernel/Utility/Types.cpp:// TODO This is a new test
 Kernel/Utility/Types.cpp:// TODO This is a new test234234234
 Kernel/Utility/Types.cpp:// TODO FISK
+Kernel/Utility/Types.cpp:// TODO FISK
+Kernel/Utility/Types.cpp:// TODO FISK
+Kernel/Utility/Types.cpp:// TODO FISK1234
 </pre>
-30 Todo's
+33 Todo's
