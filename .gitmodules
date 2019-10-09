@@ -1,9 +1,3 @@
-[submodule "etl"]
-	path = etl
-	url = git@github.com:cbladt/etl.git
-[submodule "Kernel/Utility/etl"]
-	path = Kernel/Utility/etl
-	url = git@github.com:cbladt/etl.git
 [submodule "Kernel/etl"]
 	path = Kernel/etl
 	url = git@github.com:cbladt/etl.git
