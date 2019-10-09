@@ -18,5 +18,8 @@ Kernel/CMakeLists.txt:# // TODO Probaly add KernelSrc in CMake subdir or sometin
 Kernel/Utility/Vga.hpp:// TODO Research whether this is really cross platform or only specific to some platforms.
 Kernel/Utility/Types.cpp:// TODO Remove this file as soon as the UtilityLib contains another translation unit so that CMake recognises it as a lib.
 Kernel/Utility/Types.cpp:// TODO THIS IS A TEST
+Kernel/Utility/Types.cpp:// TODO This is a new test
+Kernel/Utility/Types.cpp:// TODO This is a new test
+Kernel/Utility/Types.cpp:// TODO This is a new test
 </pre>
-18 Todo's
+21 Todo's
