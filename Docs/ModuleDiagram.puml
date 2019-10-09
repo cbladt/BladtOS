@@ -1,13 +1,29 @@
 @startuml
 
-Instance <|-- VulkanRootObject
+object KernelElf
+KernelElf : The kernel itself which glues everything together.
 
-class Instance {
-    -- Contructors & destructors --
-    - Instance()
-    
-    -- Public methods --
-    + Initialize() : bool
-}
+object BLibC
+BLibC : libc stub
+
+object ArchLib
+ArchLib : Architecture specific stuff
+
+object Utility
+Utility : Utilities to use across modules
+
+object ETL
+ETL : Embedded Template Libarary
+
+BLibC <|-- ETL
+
+ArchLib <|-- KernelElf
+ETL <|-- KernelElf
+
+ETL <|-- Utility
+
+Utility <|-- ArchLib
+Utility <|-- ETL
+
 
 @enduml

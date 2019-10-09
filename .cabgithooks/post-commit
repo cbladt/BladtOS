@@ -15,6 +15,12 @@ echo "$LINES Todo's" >> $FILE
 git add $FILE
 git commit -m"Updated $FILE" --no-verify
 
+cd Docs
+java -jar ~/opt/plantuml.jar ModuleDiagram.puml
+git add ModuleDiagram.png
+git commit -m"Updated Diagram" --no-verify
+cd ..
+
 echo "post-commmit is done!"
 
 exit 0
