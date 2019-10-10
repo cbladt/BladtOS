@@ -1,4 +1,5 @@
 #include "String.hpp"
+extern "C" void KernelPanic(void);
 
 namespace BLibC
 {
@@ -21,7 +22,7 @@ namespace BLibC
 
         if (count > Size)
         {
-            // TODO KernelPanic
+            KernelPanic();
         }
 
         auto* source = reinterpret_cast<uint8_t*>(vsource);

@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.12)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
-project ("Kernel.elf" LANGUAGES C CXX ASM_NASM)
+set(Name "Kernel.elf")
+
+project (${Name} LANGUAGES C CXX ASM_NASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
@@ -13,11 +15,18 @@ add_subdirectory("Utility")
 add_subdirectory("BLibC")
 add_subdirectory("etl")
 
-# // TODO Probaly add KernelSrc in CMake subdir or someting.
-set(SRC ${SRC} "main.cpp")
-set(SRC ${SRC} "Kernel.cpp")
-set(SRC ${SRC} "Kernel.hpp")
+set(D "KernelSource")
+set(${Name}_SRC
+	${D}/KernelMain.cpp
+	${D}/Kernel.cpp
+)
 
-add_executable(${PROJECT_NAME} ${SRC})
+set(${Name}_HDR
+	${D}/Kernel.hpp
+)
+
+add_executable(${Name} ${${Name}_SRC} ${${Name}_HDR})
+target_include_directories(${Name} PRIVATE ${D})
 target_link_libraries(etl INTERFACE BLibC)
-target_link_libraries(${PROJECT_NAME} ArchLib etl)
+target_link_libraries(${PROJECT_NAME} ArchLib etl BLibC)
+

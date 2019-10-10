@@ -1,12 +1,13 @@
 #include "Assert.hpp"
+extern "C" void KernelPanic(void);
 
 namespace BLibC
 {
     void Assert(bool condition)
     {
-        if (condition < 1)
+        if (!condition)
         {
-            // TODO KernelPanic
+            KernelPanic();
         }
     }
 }

@@ -84,50 +84,43 @@ namespace Log
         }
 
         Logger& operator <<(const int8_t value)
-        {
-          // Create string with max character count for int8_t, including null terminator.
+        {          
           return Append<int8_t, 5>(value);
         }
 
         Logger& operator <<(const uint8_t value)
-        {
-          // Create string with max character count for uint8_t, including null terminator.
+        {          
           return Append<uint8_t, 4>(value);
         }
 
         Logger& operator <<(const int16_t value)
-        {
-          // Create string with max character count for uint8_t, including null terminator.
+        {          
           return Append<int16_t, 7>(value);
         }
 
         Logger& operator <<(const uint16_t value)
-        {
-          // Create string with max character count for uint8_t, including null terminator.
+        {          
           return Append<uint16_t, 6>(value);
         }
 
-        Logger& operator <<(int value)
-        {
-          // Create string with max character count for uint8_t, including null terminator.
-          return Append<int, 12>(value);
+        // TODO Why the f*ck does this work with "int" and not "int32_t"
+        Logger& operator <<(const int value)
+        {          
+          return Append<int32_t, 12>(value);
         }
 
         Logger& operator <<(const uint32_t value)
-        {
-          // Create string with max character count for uint32_t, including null terminator.
+        {          
           return Append<uint32_t, 11>(value);
         }
 
         Logger& operator <<(const int64_t& value)
-        {
-          // Create string with max character count for int64_t, including null terminator.
+        {          
           return Append<int64_t, 21>(value);
         }
 
         Logger& operator <<(const uint64_t& value)
-        {
-          // Create string with max character count for uint64_t, including null terminator.
+        {          
           return Append<uint64_t, 20>(value);
         }
 

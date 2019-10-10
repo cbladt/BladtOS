@@ -1,11 +1,11 @@
 set(Name BLibC)
 
-SET (${Name}_SRC
+set(${Name}_SRC
     Assert.cpp
     String.cpp
 )
 
-SET (${Name}_HDR
+set(${Name}_HDR
     Assert.hpp
     String.hpp
 )

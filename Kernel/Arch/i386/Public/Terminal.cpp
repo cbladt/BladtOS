@@ -1,5 +1,5 @@
 #include "Terminal.hpp"
-#include <../Internal/Io.h>
+#include <../Internal/Io.hpp>
 #include <../Internal/Framebuffer.hpp>
 #include <Types.hpp>
 #include <Vga.hpp>

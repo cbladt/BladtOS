@@ -1,10 +1,10 @@
 set(Name UtilityLib)
 
-SET (${Name}_SRC
+set(${Name}_SRC
 	Types.cpp
 )
 
-SET (${Name}_HDR
+set(${Name}_HDR
 	Types.hpp
 	Vga.hpp		
 	Log/DummyLogger.hpp

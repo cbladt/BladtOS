@@ -25,10 +25,7 @@ set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> qcs <TARGET> <LINK_FLAGS> <OBJECTS>")
 set(CMAKE_ASM_NASM_COMPILE_OBJECT "<CMAKE_ASM_NASM_COMPILER> <INCLUDES> <FLAGS> -f elf32 -o <OBJECT> <SOURCE>")
 
 # Compiler flags.
-#set(_WarningsAsError "-Werror")
-set(_WarningsAsError "")
-
-set(_FLAGS "-ffreestanding -Wall -Wextra -c ${_WarningsAsError} ${_DEFINES}")
+set(_FLAGS "-ffreestanding -Wall -Wextra -c -Werror ${_DEFINES}")
 set(_CFLAGS "${_FLAGS} -Wno-strict-aliasing -pedantic")
 set(_CXXFLAGS "${_FLAGS} -O2 -flto -fno-exceptions -fno-rtti -Wpedantic -Wnon-virtual-dtor -Wold-style-cast -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wduplicated-cond -Wlogical-op -Wuseless-cast")
 set(CMAKE_C_FLAGS "${_CFLAGS}" CACHE INTERNAL "C compiler options" FORCE)
