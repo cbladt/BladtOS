@@ -1,7 +1,8 @@
 #include "Kernel.hpp"
 #include <Interrupt.hpp>
+#include <LoadGDT.hpp>
+
 #include <Log.hpp>
-#include <Serialport.hpp>
 
 namespace Kernel
 {
@@ -20,7 +21,7 @@ namespace Kernel
 
     void Init()
     {
-        // Init heap and stuff.
+        GDT::Load();
     }
 
     void Main()
