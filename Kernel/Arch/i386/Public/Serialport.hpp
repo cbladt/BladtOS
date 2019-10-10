@@ -17,9 +17,9 @@ public:
     Serialport(Serialport&&) = delete;
     Serialport& operator=(Serialport&&) = delete;
 
-    void Write(const uint8_t* str)
+    void Write(const etl::string_view& string)
     {
-        _impl.Write(str);
+        _impl.Write(string);
     }
 
 private:

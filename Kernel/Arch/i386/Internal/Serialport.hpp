@@ -1,7 +1,11 @@
 #pragma once
 
 #include <Types.hpp>
-#include <../Internal/Io.h>
+#include <../Internal/Io.hpp>
+
+#include <etl/string_view.h>
+
+#include <Log.hpp>
 
 ///
 /// \brief __internal contains constexpr stuff, because the class cannot contain constexpr stuff.
@@ -59,6 +63,7 @@ namespace __internal
     public:
 	SerialportImpl()
 	{
+	    Log::Debug() << "Comport is " << ComPort << Log::NewLine;
 	    SetDivisor();
 
 	    SetConfig();
@@ -75,21 +80,16 @@ namespace __internal
 	SerialportImpl(SerialportImpl&&) = delete;
 	SerialportImpl& operator=(SerialportImpl&&) = delete;
 
-	void Write(const uint8_t* str)
+	void Write(const etl::string_view& string)
 	{
-	    for(auto n = 0;; n++)
+	    for (auto n = string.begin(); n != string.end(); n++)
 	    {
-		auto& c = str[n];
-
-		if (c == '\0')
-		{
-		    break;
-		}
+		auto& c = n[0];
 
 		// TODO Transmit more than 1 byte at the time.
 		WaitForReadyForTransmit();
 
-		WriteByte(c);
+		WriteByte(static_cast<uint8_t>(c));
 	    }
 	}
 

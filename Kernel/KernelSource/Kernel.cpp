@@ -1,6 +1,7 @@
 #include "Kernel.hpp"
 #include <Interrupt.hpp>
 #include <Log.hpp>
+#include <Serialport.hpp>
 
 namespace Kernel
 {
@@ -24,8 +25,11 @@ namespace Kernel
 
     void Main()
     {
-        Log::Debug() << "Debug: " << "Hrello World" << " " << 1337 << Log::NewLine;
-        Log::Error() << "Error: " << "Hrello World" << " " << 1337 << Log::NewLine;
-        Log::Debug() << "This is" << Log::NewLine << "newline";
+        Log::Debug() << "Creating serialport" << Log::NewLine;
+        Serialport<0x3F8, 1> sp;
+
+        Log::Debug() << "Writing to serialport" << Log::NewLine;
+        sp.Write("hrello!");
+        Log::Debug() << "..done" << Log::NewLine;
     }
 }
