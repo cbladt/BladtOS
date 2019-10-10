@@ -1,3 +1,0 @@
-[submodule "Kernel/etl"]
-	path = Kernel/etl
-	url = git@github.com:cbladt/etl.git
