@@ -1,6 +1,6 @@
 #include "Kernel.hpp"
 #include <Interrupt.hpp>
-#include <LoadGDT.hpp>
+#include <InitMemory.hpp>
 
 #include <Log.hpp>
 
@@ -21,7 +21,7 @@ namespace Kernel
 
     void Init()
     {
-        GDT::Load();
+        Memory::Load();
     }
 
     void Main()

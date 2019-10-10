@@ -6,7 +6,8 @@ set(Name ArchLib)
 set(${Name}_PUB_SRC
     Public/Interrupt.cpp
     Public/Terminal.cpp
-    Public/LoadGDT.asm
+    Public/InitMemory.asm
+    Public/InitMemory.cpp
 )
 
 set(${Name}_PUB_HDR
@@ -14,7 +15,7 @@ set(${Name}_PUB_HDR
     Public/Serialport.hpp
     Public/Terminal.hpp
     Public/Log.hpp
-    Public/LoadGDT.hpp
+    Public/InitMemory.hpp
 )
 
 # Internal
