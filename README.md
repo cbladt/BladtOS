@@ -1,3 +1,8 @@
+# Thoughts
+## ETL
+Had to make a copy instead of submodule as I had too many changes.  
+Could be nice to pull request my changes back and make it libc independent with its profiles system.  
+
 # Setting up QT Creator
 [Latest QT Creator](http://download.qt.io/official_releases/qtcreator/)
 
