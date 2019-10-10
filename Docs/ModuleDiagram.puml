@@ -18,9 +18,8 @@ ETL : Embedded Template Libarary
 BLibC <|-- ETL
 
 ArchLib <|-- KernelElf
-ETL <|-- KernelElf
 
-ETL <|-- Utility
+ETL <|-- KernelElf
 
 Utility <|-- ArchLib
 Utility <|-- ETL
