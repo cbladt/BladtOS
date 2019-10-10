@@ -12,10 +12,9 @@ Kernel/Arch/i386/Public/Terminal.cpp:                // Todo Optimize to copy 4 
 Kernel/Arch/i386/Public/Terminal.cpp:        // TODO We should ignore cursor as long as we do not accept input.
 Kernel/Arch/i386/Public/Interrupt.hpp:/// // TODO How do I test this?
 Kernel/Arch/i386/Public/Serialport.hpp:/// \note // TODO Configuration should be parameterized.
-Kernel/Arch/i386/Public/Log.cpp:    // TODO Research: Could these be inlined in header file? Right now placed in cpp to ensure a single copy across translations units.
-Kernel/Arch/i386/Internal/Framebuffer.hpp:    // TODO Should somehow be datadriven so the terminal driver can be unittested.
 Kernel/Arch/i386/Internal/Serialport.hpp:/// \note // TODO This stuff should be parameterized.
 Kernel/Arch/i386/Internal/Serialport.hpp:		// TODO Transmit more than 1 byte at the time.
+Kernel/CMakeLists.txt:# // TODO Unittest all ze things! .. later
 Kernel/BLibC/String.cpp:    // TODO Copy 4 byte at the time.
 Kernel/BLibC/String.cpp:    // TODO Copy 4 byte at the time.
 Kernel/BLibC/Float.hpp:// TODO Implement
@@ -23,4 +22,4 @@ Kernel/Utility/Log/Logger.hpp:        // TODO Why the f*ck does this work with "
 Kernel/Utility/Vga.hpp:// TODO Research whether this is really cross platform or only specific to some platforms.
 Kernel/Utility/Types.cpp:// TODO Remove this file as soon as the UtilityLib contains another translation unit so that CMake recognises it as a lib.
 </pre>
-22 Todo's
+21 Todo's
