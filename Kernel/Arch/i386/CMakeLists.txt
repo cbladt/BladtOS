@@ -5,8 +5,7 @@ set(Name ArchLib)
 # Public
 set(${Name}_PUB_SRC
     Public/Interrupt.cpp
-    Public/Terminal.cpp
-    Public/Log.cpp
+    Public/Terminal.cpp    
 )
 
 set(${Name}_PUB_HDR

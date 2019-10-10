@@ -26,3 +26,9 @@ private:
     __internal::SerialportImpl<ComPort, Divisor> _impl;
 };
 
+namespace ComPort
+{
+    constexpr uint16_t Com1 = 0x3F8;
+}
+
+

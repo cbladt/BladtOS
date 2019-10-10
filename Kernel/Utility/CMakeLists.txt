@@ -9,6 +9,7 @@ set(${Name}_HDR
 	Vga.hpp		
 	Log/DummyLogger.hpp
 	Log/Logger.hpp
+	Time.hpp
 )
 
 add_library(${Name} STATIC ${${Name}_SRC} ${${Name}_HDR})

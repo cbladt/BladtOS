@@ -5,8 +5,6 @@
 
 #include <etl/string_view.h>
 
-#include <Log.hpp>
-
 ///
 /// \brief __internal contains constexpr stuff, because the class cannot contain constexpr stuff.
 /// \note // TODO This stuff should be parameterized.
@@ -42,19 +40,19 @@ namespace __internal
     template <const uint16_t ComPort>
     constexpr uint16_t LineCommandPort()
     {
-	return static_cast<uint16_t>(ComPort + 2);
+	return static_cast<uint16_t>(ComPort + 3);
     }
 
     template <const uint16_t ComPort>
     constexpr uint16_t ModemCommandPort()
     {
-	return static_cast<uint16_t>(ComPort + 2);
+	return static_cast<uint16_t>(ComPort + 4);
     }
 
     template <const uint16_t ComPort>
     constexpr uint16_t LineStatusPort()
     {
-	return static_cast<uint16_t>(ComPort + 2);
+	return static_cast<uint16_t>(ComPort + 5);
     }
 
     template <const uint16_t ComPort, const uint16_t Divisor>
@@ -62,8 +60,7 @@ namespace __internal
     {
     public:
 	SerialportImpl()
-	{
-	    Log::Debug() << "Comport is " << ComPort << Log::NewLine;
+	{	    
 	    SetDivisor();
 
 	    SetConfig();
@@ -81,7 +78,7 @@ namespace __internal
 	SerialportImpl& operator=(SerialportImpl&&) = delete;
 
 	void Write(const etl::string_view& string)
-	{
+	{	    
 	    for (auto n = string.begin(); n != string.end(); n++)
 	    {
 		auto& c = n[0];
@@ -97,12 +94,12 @@ namespace __internal
 	uint16_t _comPort;
 
 	void DoEnableDLAB()
-	{
+	{	    
 	    OutByte(LineCommandPort<ComPort>(), EnableDLAB);
 	}
 
 	void SetDivisor()
-	{
+	{	    
 	    DoEnableDLAB();
 
 	    OutByte(DataPort<ComPort>(), (Divisor >> 8) & 0x00FF);
@@ -111,32 +108,32 @@ namespace __internal
 	}
 
 	void SetConfig()
-	{
+	{	    
 	    OutByte(LineCommandPort<ComPort>(), DefaultConfig);
 	}
 
 	void SetFifoConfig()
-	{
+	{	    
 	    OutByte(FifoCommandPort<ComPort>(), FifoConfig);
 	}
 
 	void SetModemConfig()
-	{
+	{	    
 	    OutByte(ModemCommandPort<ComPort>(), ModemConfig);
 	}
 
 	void WriteByte(uint8_t b)
-	{
+	{	    
 	    OutByte(DataPort<ComPort>(), b);
 	}
 
 	void WaitForReadyForTransmit() const
-	{
+	{	    
 	    while(!ReadyForTransmit())
 	    {
 		volatile int doNotOptimizeOut = 1;
 		(void)doNotOptimizeOut;
-	    }
+	    }	    
 	}
 
 	bool ReadyForTransmit() const

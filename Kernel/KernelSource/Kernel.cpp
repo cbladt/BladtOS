@@ -25,11 +25,15 @@ namespace Kernel
 
     void Main()
     {
-        Log::Debug() << "Creating serialport" << Log::NewLine;
-        Serialport<0x3F8, 1> sp;
+        for (auto n = 0; n < 1000; n++)
+        {
+            Log::Debug() << "Testing: " << n << Log::NewLine;
 
-        Log::Debug() << "Writing to serialport" << Log::NewLine;
-        sp.Write("hrello!");
-        Log::Debug() << "..done" << Log::NewLine;
+            for (auto i = 0; i < 1000000; i++)
+            {
+                volatile auto x = i;
+                (void)x;
+            }
+        }
     }
 }
