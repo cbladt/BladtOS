@@ -1,8 +1,11 @@
 # Thoughts
 * Interrupt handler
+* Keyboard input - Terminal commands.
 * Multitasking with compiletime services/applications
+* UI - uGFX possibly?
 * Memory address seperation from services/applications
-* Fullblown userspace with filesystem and syscalls (ETA: 10 years)
+* Fullblown userspace with filesystem and syscalls (ETC: 10 years)
+* uGFX for desktop environment - each application window provide own framebuffer interface) (ETC: 15 years)
 ## ETL
 Had to make a copy instead of submodule as I had too many changes.  
 Could be nice to pull request my changes back and make it libc independent with its profiles system.  
