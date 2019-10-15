@@ -1,7 +1,8 @@
 # Thoughts
 * Interrupt handler
-* Multitasking with compiletime services
-* Fullblown userspace with applications in their own address space.
+* Multitasking with compiletime services/applications
+* Memory address seperation from services/applications
+* Fullblown userspace with filesystem and syscalls (ETA: 10 years)
 ## ETL
 Had to make a copy instead of submodule as I had too many changes.  
 Could be nice to pull request my changes back and make it libc independent with its profiles system.  
