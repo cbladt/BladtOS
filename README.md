@@ -1,4 +1,7 @@
 # Thoughts
+* Interrupt handler
+* Multitasking with compiletime services
+* Fullblown userspace with applications in their own address space.
 ## ETL
 Had to make a copy instead of submodule as I had too many changes.  
 Could be nice to pull request my changes back and make it libc independent with its profiles system.  
