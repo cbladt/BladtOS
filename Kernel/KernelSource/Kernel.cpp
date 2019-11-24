@@ -1,6 +1,5 @@
 #include "Kernel.hpp"
 #include <Interrupt.hpp>
-#include <InitMemory.hpp>
 
 #include <Log.hpp>
 
@@ -21,7 +20,7 @@ namespace Kernel
 
     void Init()
     {
-        Memory::Load();
+        // Init heap and stuff.
     }
 
     void Main()
